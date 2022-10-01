@@ -1,0 +1,82 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Sprites/christian_1.png" type="Texture" id=2]
+[ext_resource path="res://Theme/christian_theme.tres" type="Theme" id=3]
+[ext_resource path="res://Scenes/Ads/Christian.gd" type="Script" id=4]
+
+[node name="Christian" type="Node2D"]
+script = ExtResource( 4 )
+
+[node name="Picture" type="TextureRect" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Control" type="Control" parent="."]
+margin_right = 600.0
+margin_bottom = 600.0
+
+[node name="VBox" type="VBoxContainer" parent="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+alignment = 1
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Control/VBox"]
+margin_right = 600.0
+margin_bottom = 488.0
+size_flags_vertical = 3
+theme = ExtResource( 3 )
+text = "Would you date this Christian..?"
+
+[node name="MarginContainer" type="MarginContainer" parent="Control/VBox"]
+margin_top = 492.0
+margin_right = 600.0
+margin_bottom = 492.0
+
+[node name="HBox" type="HBoxContainer" parent="Control/VBox"]
+margin_top = 496.0
+margin_right = 600.0
+margin_bottom = 571.0
+
+[node name="MarginContainer" type="MarginContainer" parent="Control/VBox/HBox"]
+margin_right = 149.0
+margin_bottom = 75.0
+size_flags_horizontal = 3
+
+[node name="Yes" type="Button" parent="Control/VBox/HBox"]
+margin_left = 153.0
+margin_right = 228.0
+margin_bottom = 75.0
+theme = ExtResource( 3 )
+text = "Yes"
+
+[node name="MarginContainer2" type="MarginContainer" parent="Control/VBox/HBox"]
+margin_left = 232.0
+margin_right = 382.0
+margin_bottom = 75.0
+size_flags_horizontal = 3
+
+[node name="No" type="Button" parent="Control/VBox/HBox"]
+margin_left = 386.0
+margin_right = 446.0
+margin_bottom = 75.0
+theme = ExtResource( 3 )
+text = "No"
+
+[node name="MarginContainer3" type="MarginContainer" parent="Control/VBox/HBox"]
+margin_left = 450.0
+margin_right = 600.0
+margin_bottom = 75.0
+size_flags_horizontal = 3
+
+[node name="MarginContainer4" type="MarginContainer" parent="Control/VBox"]
+margin_top = 575.0
+margin_right = 600.0
+margin_bottom = 600.0
+rect_min_size = Vector2( 0, 25 )
+
+[connection signal="pressed" from="Control/VBox/HBox/Yes" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Control/VBox/HBox/No" to="." method="_on_button_pressed"]
