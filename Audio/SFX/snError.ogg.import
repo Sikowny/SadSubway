@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/snError.ogg-5b2ca5456947b6a082135f448f70efcb.oggstr"
+
+[deps]
+
+source_file="res://Audio/SFX/snError.ogg"
+dest_files=[ "res://.import/snError.ogg-5b2ca5456947b6a082135f448f70efcb.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

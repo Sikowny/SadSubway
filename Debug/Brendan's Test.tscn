@@ -1,0 +1,32 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Scenes/Objects/Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/Objects/Wall.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/Objects/Player.gd" type="Script" id=3]
+
+[node name="Brendan\'s Test" type="Node2D"]
+
+[node name="Walls" type="Node2D" parent="."]
+
+[node name="Wall" parent="Walls" instance=ExtResource( 2 )]
+position = Vector2( 192, 704 )
+scale = Vector2( 159.2, 1 )
+
+[node name="Wall2" parent="Walls" instance=ExtResource( 2 )]
+position = Vector2( 1024, 640 )
+scale = Vector2( 3, 2 )
+
+[node name="Wall3" parent="Walls" instance=ExtResource( 2 )]
+position = Vector2( 192, 640 )
+scale = Vector2( 1, 10 )
+
+[node name="Wall4" parent="Walls" instance=ExtResource( 2 )]
+position = Vector2( 704, 640 )
+
+[node name="Wall5" parent="Walls" instance=ExtResource( 2 )]
+position = Vector2( 768, 640 )
+scale = Vector2( 1, 2 )
+
+[node name="Player" parent="." instance=ExtResource( 1 )]
+position = Vector2( 608, 456 )
+script = ExtResource( 3 )
