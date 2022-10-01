@@ -2,7 +2,7 @@
 
 [ext_resource path="res://Sprites/christian_1.png" type="Texture" id=2]
 [ext_resource path="res://Theme/christian_theme.tres" type="Theme" id=3]
-[ext_resource path="res://Scenes/Ads/Christian.gd" type="Script" id=4]
+[ext_resource path="res://Scenes/Ads/Christian/Christian.gd" type="Script" id=4]
 
 [node name="Christian" type="Node2D"]
 script = ExtResource( 4 )

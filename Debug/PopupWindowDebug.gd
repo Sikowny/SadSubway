@@ -1,6 +1,7 @@
-extends Node2D
+extends Node
 	
-func _process(delta):
-	if Input.is_action_just_pressed("debug"):
-		$Control/Popup.popup_centered()
+export(PackedScene) var debug_scene;
 
+func _ready():
+	$PopupWindow.next_ad = debug_scene
+	$PopupWindow.open_new_ad()

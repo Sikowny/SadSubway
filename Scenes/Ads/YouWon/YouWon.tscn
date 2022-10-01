@@ -1,0 +1,69 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Scenes/Ads/YouWon/YouWon.gd" type="Script" id=1]
+[ext_resource path="res://Theme/you_won_theme.tres" type="Theme" id=2]
+[ext_resource path="res://Theme/million_theme.tres" type="Theme" id=3]
+
+[sub_resource type="Gradient" id=1]
+interpolation_mode = 2
+colors = PoolColorArray( 0.0546875, 1, 0, 1, 1, 0, 0, 1 )
+
+[sub_resource type="GradientTexture" id=2]
+gradient = SubResource( 1 )
+width = 600
+
+[node name="YouWon" type="Node2D"]
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 600.0
+margin_right = 1200.0
+margin_bottom = 600.0
+rect_rotation = 90.0
+texture = SubResource( 2 )
+stretch_mode = 1
+
+[node name="you_won" type="RichTextLabel" parent="."]
+margin_left = 8.0
+margin_top = 45.0
+margin_right = 594.0
+margin_bottom = 530.0
+theme = ExtResource( 2 )
+text = "Congradulations, you won!"
+
+[node name="1000000" type="RichTextLabel" parent="."]
+margin_left = 33.0
+margin_top = 257.0
+margin_right = 758.0
+margin_bottom = 395.0
+theme = ExtResource( 3 )
+bbcode_enabled = true
+bbcode_text = "[wave amp=50 freq=5]$10000000!!!![/wave]"
+text = "$10000000!!!!"
+
+[node name="Yes" type="Button" parent="."]
+margin_left = 67.0
+margin_top = 427.0
+margin_right = 212.0
+margin_bottom = 557.0
+theme = ExtResource( 2 )
+text = "Yes"
+
+[node name="No" type="Button" parent="."]
+margin_left = 294.0
+margin_top = 433.0
+margin_right = 460.0
+margin_bottom = 550.0
+theme = ExtResource( 2 )
+text = "No "
+
+[connection signal="pressed" from="Yes" to="." method="_on_Yes_pressed"]
+[connection signal="mouse_entered" from="No" to="." method="_on_No_mouse_entered"]
+[connection signal="pressed" from="No" to="." method="_on_No_pressed"]
