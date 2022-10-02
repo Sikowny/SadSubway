@@ -1,39 +1,44 @@
 extends Node
 
+enum {TITLE_SCREEN, GAME_OVER, GAME}
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
+signal state_changed(old_state, new_state);
 
-var accelX = 1;
-var MAX_VEL_X = 3;
-var MAX_VEL_Y = 3;
-var vel2D = Vector2();
-var Move = Vector2();
+export(PackedScene) var first_level;
+var level;
 
+var state = -1 setget set_state
 
+func set_state(new_state):
+	if state != new_state:
+		emit_signal("state_changed", state, new_state)
+		state = new_state
 
-# Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	set_state(TITLE_SCREEN)
 
+func _on_PopupWindow_ad_finished(is_success):
+	if is_success:
+		$PopupTimer.start()
+	else:
+		state = GAME_OVER
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	var MoveX = Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left")
-	var MoveY = Input.get_action_strength("ui_down") - Input.get_action_strength("ui_up")
+func _on_Main_state_changed(old_state, new_state):
+	if old_state == GAME_OVER:
+		$GameOver.visible = false
+	elif old_state == TITLE_SCREEN:
+		$TitleScreen.visible = false
+	elif old_state == GAME:
+		pass
+		
+	if new_state == GAME_OVER:
+		$GameOver.visible = true
+	elif new_state == TITLE_SCREEN:
+		$TitleScreen.visible = true
+	elif new_state == GAME:
+		$PopupTimer.start()
+		level = first_level.instance()
+		add_child(level)
 
-	Move = Vector2(MoveX,MoveY).normalized()
-	
-	vel2D.x += Move.x*accelX;
-	vel2D.y += Move.y;
-	
-	#friction
-	if(Move.x == 0): vel2D.x = 0;
-	if(Move.y == 0): vel2D.y = 0;
-	
-	vel2D.x = clamp(vel2D.x , -MAX_VEL_X, MAX_VEL_X)
-	vel2D.y = clamp(vel2D.y, -MAX_VEL_Y, MAX_VEL_Y)
-	
-	
-	$Sprite.position += vel2D
+func _on_StartButton_pressed():
+	set_state(GAME)
