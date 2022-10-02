@@ -1,5 +1,7 @@
 extends Popup
 
+signal ad_finished(is_success);
+
 # A value from 0 to 2
 export var difficulty = 0;
 
@@ -18,11 +20,12 @@ func open_new_ad():
 	ad.connect("ad_finished", self, "close_current_ad")
 	$Container/Viewport.add_child(ad)
 	
-func close_current_ad(success):
+func close_current_ad(is_success):
 	hide()
 	preload_next_ad()
 	for child in $Container/Viewport.get_children():
 		child.queue_free()
+	emit_signal("ad_finished", is_success)
 
 func _ready():
 	preload_next_ad()
