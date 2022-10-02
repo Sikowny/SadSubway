@@ -13,14 +13,13 @@ wait_time = 10.0
 one_shot = true
 autostart = true
 
-[node name="UI" type="Control" parent="."]
-margin_right = 40.0
-margin_bottom = 40.0
-__meta__ = {
-"_edit_lock_": true
-}
+[node name="UI" type="CanvasLayer" parent="."]
 
 [node name="PopupWindow" parent="UI" instance=ExtResource( 3 )]
+margin_left = -640.0
+margin_top = -360.0
+margin_right = -600.0
+margin_bottom = -320.0
 
 [node name="GameOver" type="ColorRect" parent="."]
 visible = false
