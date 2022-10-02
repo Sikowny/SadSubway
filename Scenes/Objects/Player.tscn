@@ -1,7 +1,7 @@
 [gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://Sprites/Player/playerTemp.png" type="Texture" id=1]
-[ext_resource path="res://Main.gd" type="Script" id=2]
+[ext_resource path="res://Scenes/Objects/Player.gd" type="Script" id=2]
 [ext_resource path="res://Sprites/Player/runTemp.png" type="Texture" id=3]
 [ext_resource path="res://Sprites/Player/airTemp.png" type="Texture" id=4]
 

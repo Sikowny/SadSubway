@@ -1,15 +1,15 @@
 extends KinematicBody2D
 class_name Player
 # Stats
-var gSS = 64; #gridSpaceSize
-var accelX = gSS*1;
-var gravity = gSS*0.7
-var friction_curr = gSS*0.5
-var jumpStr = -gSS*15;
-var jump_count = 1
-var MAX_VEL_X = gSS*7;
-var MAX_VEL_Y = gSS*20;
-var snap = Vector2(0,8);
+const gSS = 64; #gridSpaceSize
+export var accelX = gSS*1;
+export var gravity = gSS*0.7
+export var friction_curr = gSS*0.5
+export var jumpStr = -gSS*15;
+export var jump_count = 1
+export var MAX_VEL_X = gSS*7;
+export var MAX_VEL_Y = gSS*20;
+var snap = Vector2(0,gSS*0.3);
 
 # States
 var facing = 1
