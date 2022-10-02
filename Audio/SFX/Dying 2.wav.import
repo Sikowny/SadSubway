@@ -1,0 +1,23 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Dying 2.wav-bfd56fc46066fc2b07069e2a78c5b2c8.sample"
+
+[deps]
+
+source_file="res://Audio/SFX/Dying 2.wav"
+dest_files=[ "res://.import/Dying 2.wav-bfd56fc46066fc2b07069e2a78c5b2c8.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

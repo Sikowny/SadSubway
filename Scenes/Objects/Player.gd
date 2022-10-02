@@ -82,6 +82,8 @@ func _physics_process(delta):
 	velocity = move_and_slide_with_snap(velocity, snap, Vector2.UP)
 	#velocity = move_and_slide(velocity, Vector2.UP)
 	
+	
+	
 	do_playerAnimation()
 
 func do_playerInput():
