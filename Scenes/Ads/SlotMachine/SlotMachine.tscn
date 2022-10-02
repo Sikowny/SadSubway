@@ -1,0 +1,76 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Sprites/slot-shell.png" type="Texture" id=1]
+[ext_resource path="res://Sprites/slot-content.png" type="Texture" id=2]
+[ext_resource path="res://Scenes/Ads/SlotMachine/SlotMachine.gd" type="Script" id=3]
+
+[node name="SlotMachine" type="Node2D"]
+script = ExtResource( 3 )
+
+[node name="Button1" type="Button" parent="."]
+margin_left = 32.0
+margin_top = 86.0
+margin_right = 187.0
+margin_bottom = 428.0
+flat = true
+
+[node name="Slot1" type="ParallaxBackground" parent="."]
+
+[node name="Layer" type="ParallaxLayer" parent="Slot1"]
+motion_mirroring = Vector2( 0, 700 )
+
+[node name="Sprite" type="Sprite" parent="Slot1/Layer"]
+position = Vector2( 110, 435 )
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Button2" type="Button" parent="."]
+margin_left = 221.0
+margin_top = 85.0
+margin_right = 376.0
+margin_bottom = 431.0
+flat = true
+
+[node name="Slot2" type="ParallaxBackground" parent="."]
+
+[node name="Layer" type="ParallaxLayer" parent="Slot2"]
+motion_mirroring = Vector2( 0, 700 )
+
+[node name="Sprite" type="Sprite" parent="Slot2/Layer"]
+position = Vector2( 300, 435 )
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Button3" type="Button" parent="."]
+margin_left = 412.0
+margin_top = 86.0
+margin_right = 567.0
+margin_bottom = 428.0
+flat = true
+
+[node name="Slot3" type="ParallaxBackground" parent="."]
+
+[node name="Layer" type="ParallaxLayer" parent="Slot3"]
+motion_mirroring = Vector2( 0, 700 )
+
+[node name="Sprite" type="Sprite" parent="Slot3/Layer"]
+position = Vector2( 490, 435 )
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Foreground" type="Sprite" parent="."]
+position = Vector2( 300, 300 )
+texture = ExtResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[connection signal="pressed" from="Button1" to="." method="_on_Button1_pressed"]
+[connection signal="pressed" from="Button2" to="." method="_on_Button2_pressed"]
+[connection signal="pressed" from="Button3" to="." method="_on_Button3_pressed"]
