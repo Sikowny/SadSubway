@@ -12,6 +12,9 @@ export var MAX_VEL_Y = gSS*20;
 var snap = Vector2(0,gSS*0.3);
 
 # States
+var isJumping = 0
+var hasControl = 1;
+var hasPhysics = 1;
 var facing = 1
 #var grounded = 1 use is_on_floor()
 var jumps_left = jump_count
@@ -35,6 +38,7 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta):
+	checkAds()
 	do_playerInput();
 	# reset snap
 	snap = Vector2(0,gSS*0.3);
@@ -47,7 +51,7 @@ func _physics_process(delta):
 		
 		
 	#friction
-	if(Move.x == 0): 
+	if(Move.x == 0) && hasPhysics : 
 		if(velocity.x != 0):
 			if (abs(velocity.x) < friction_curr):
 				velocity.x = 0;
@@ -66,9 +70,6 @@ func _physics_process(delta):
 		
 	
 	#Jump code
-	var isJumping = Input.is_key_pressed(KEY_W) || Input.is_key_pressed(KEY_SPACE)
-	#var isJumping = Input
-	
 	if(isJumping):
 		if(jumps_left > 0):
 			print("jump")
@@ -79,7 +80,11 @@ func _physics_process(delta):
 	velocity.x = clamp(velocity.x , -MAX_VEL_X, MAX_VEL_X)
 	velocity.y = clamp(velocity.y, -MAX_VEL_Y, MAX_VEL_Y)
 	
-	velocity = move_and_slide_with_snap(velocity, snap, Vector2.UP)
+	if(hasPhysics):
+		velocity = move_and_slide_with_snap(velocity, snap, Vector2.UP)
+	else:
+		pass
+		#velocity = Vector2(0,0)
 	#velocity = move_and_slide(velocity, Vector2.UP)
 	
 	
@@ -87,11 +92,17 @@ func _physics_process(delta):
 	do_playerAnimation()
 
 func do_playerInput():
-	var MoveX = Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left")
-	var MoveX1 = int(Input.is_key_pressed(KEY_D)) - int(Input.is_key_pressed(KEY_A))
-	var MoveY = Input.get_action_strength("ui_down") - Input.get_action_strength("ui_up")
-	var MoveY1 = int(Input.is_key_pressed(KEY_S)) - int(Input.is_key_pressed(KEY_W))
-	Move = Vector2(MoveX1,MoveY1).normalized()
+	if(hasControl):
+		var MoveX = Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left")
+		var MoveX1 = int(Input.is_key_pressed(KEY_D)) - int(Input.is_key_pressed(KEY_A))
+		var MoveY = Input.get_action_strength("ui_down") - Input.get_action_strength("ui_up")
+		var MoveY1 = int(Input.is_key_pressed(KEY_S)) - int(Input.is_key_pressed(KEY_W))
+		
+		isJumping = Input.is_key_pressed(KEY_W) || Input.is_key_pressed(KEY_SPACE)
+		Move = Vector2(MoveX1,MoveY1).normalized()
+	else:
+		Move = Vector2.ZERO
+		isJumping = 0
 	
 func do_playerAnimation():
 	if(facing == -1):
@@ -117,5 +128,17 @@ func do_playerAnimation():
 
 func is_player():
 	return true
+	
+	
+func playerDeath():
+	hasControl = 0;
+	
+func checkAds():
+	if(Global.ad_is_open()):
+		hasControl = 0;
+		hasPhysics = 0;
+	else:
+		hasControl = 1;
+		hasPhysics = 1;
 
 
