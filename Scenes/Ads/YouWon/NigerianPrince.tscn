@@ -94,7 +94,7 @@ text = "Miss the chance of a lifetime"
 script = ExtResource( 2 )
 
 [node name="Timer" type="Timer" parent="No"]
-wait_time = 10.0
+wait_time = 8.0
 one_shot = true
 autostart = true
 

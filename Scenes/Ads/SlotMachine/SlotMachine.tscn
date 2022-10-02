@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Sprites/slot-shell.png" type="Texture" id=1]
 [ext_resource path="res://Sprites/slot-content.png" type="Texture" id=2]
 [ext_resource path="res://Scenes/Ads/SlotMachine/SlotMachine.gd" type="Script" id=3]
+[ext_resource path="res://Theme/gamble_theme.tres" type="Theme" id=4]
 
 [node name="SlotMachine" type="Node2D"]
 script = ExtResource( 3 )
@@ -15,9 +16,10 @@ margin_bottom = 428.0
 flat = true
 
 [node name="Slot1" type="ParallaxBackground" parent="."]
+scroll_base_offset = Vector2( 0, 60 )
 
 [node name="Layer" type="ParallaxLayer" parent="Slot1"]
-motion_mirroring = Vector2( 0, 700 )
+motion_mirroring = Vector2( 0, 960 )
 
 [node name="Sprite" type="Sprite" parent="Slot1/Layer"]
 position = Vector2( 110, 435 )
@@ -34,9 +36,10 @@ margin_bottom = 431.0
 flat = true
 
 [node name="Slot2" type="ParallaxBackground" parent="."]
+scroll_base_offset = Vector2( 0, 60 )
 
 [node name="Layer" type="ParallaxLayer" parent="Slot2"]
-motion_mirroring = Vector2( 0, 700 )
+motion_mirroring = Vector2( 0, 960 )
 
 [node name="Sprite" type="Sprite" parent="Slot2/Layer"]
 position = Vector2( 300, 435 )
@@ -53,9 +56,10 @@ margin_bottom = 428.0
 flat = true
 
 [node name="Slot3" type="ParallaxBackground" parent="."]
+scroll_base_offset = Vector2( 0, 60 )
 
 [node name="Layer" type="ParallaxLayer" parent="Slot3"]
-motion_mirroring = Vector2( 0, 700 )
+motion_mirroring = Vector2( 0, 960 )
 
 [node name="Sprite" type="Sprite" parent="Slot3/Layer"]
 position = Vector2( 490, 435 )
@@ -70,6 +74,22 @@ texture = ExtResource( 1 )
 __meta__ = {
 "_edit_lock_": true
 }
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+margin_left = 32.0
+margin_top = 7.0
+margin_right = 569.0
+margin_bottom = 81.0
+theme = ExtResource( 4 )
+text = "Have you SLOT about winning big?"
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="."]
+margin_left = 31.0
+margin_top = 443.0
+margin_right = 567.0
+margin_bottom = 581.0
+theme = ExtResource( 4 )
+text = "Click the slots to find out of you're destined for greatness!"
 
 [connection signal="pressed" from="Button1" to="." method="_on_Button1_pressed"]
 [connection signal="pressed" from="Button2" to="." method="_on_Button2_pressed"]

@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Scenes/Ads/SlotMachine/SlotMachine.tscn" type="PackedScene" id=1]
+
+[node name="SlotMachine" instance=ExtResource( 1 )]
+slot_1_speed = 1200.0
+slot_2_speed = 1600.0
+slot_3_speed = 2000.0
+
+[node name="RichTextLabel" parent="." index="7"]
+text = "Sure, people who gamble are suckers,"
+
+[node name="RichTextLabel2" parent="." index="8"]
+meta_underlined = false
+text = "But you'll be rich!!!!!
+RIIIIIIIIIIICH!"
