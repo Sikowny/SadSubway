@@ -115,3 +115,5 @@ func do_playerAnimation():
 
 func is_player():
 	return true
+
+

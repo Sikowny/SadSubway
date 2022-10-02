@@ -80,10 +80,10 @@ frames = SubResource( 1 )
 animation = "Air Neutral"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
 position = Vector2( 0, -35.5 )
 shape = SubResource( 10 )
-disabled = true
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+visible = false
 polygon = PoolVector2Array( 0, -1, -7, -38, 0, -67, 7, -38 )
+disabled = true

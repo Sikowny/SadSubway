@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Nigerian Prince Ad.mp3-f616042e94a94aeb556e9809a4c48114.mp3str"
+
+[deps]
+
+source_file="res://Audio/Music/Nigerian Prince Ad.mp3"
+dest_files=[ "res://.import/Nigerian Prince Ad.mp3-f616042e94a94aeb556e9809a4c48114.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

@@ -30,6 +30,10 @@ config/name="SadSubway"
 run/main_scene="res://Scenes/Main.tscn"
 config/icon="res://Sprites/icon.png"
 
+[autoload]
+
+Global="*res://Global.gd"
+
 [display]
 
 window/size/width=1280
