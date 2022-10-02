@@ -42,6 +42,7 @@ margin_bottom = 550.0
 text = "Start"
 
 [connection signal="state_changed" from="." to="." method="_on_Main_state_changed"]
+[connection signal="timeout" from="PopupTimer" to="." method="_on_PopupTimer_timeout"]
 [connection signal="timeout" from="PopupTimer" to="UI/PopupWindow" method="open_new_ad"]
 [connection signal="ad_finished" from="UI/PopupWindow" to="." method="_on_PopupWindow_ad_finished"]
 [connection signal="pressed" from="TitleScreen/StartButton" to="." method="_on_StartButton_pressed"]

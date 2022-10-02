@@ -14,10 +14,13 @@ func set_state(new_state):
 		emit_signal("state_changed", state, new_state)
 		state = new_state
 
+var ad_is_open = false
+
 func _ready():
 	set_state(TITLE_SCREEN)
 
 func _on_PopupWindow_ad_finished(is_success):
+	ad_is_open = false
 	if is_success:
 		$PopupTimer.start()
 	else:
@@ -36,9 +39,13 @@ func _on_Main_state_changed(old_state, new_state):
 	elif new_state == TITLE_SCREEN:
 		$TitleScreen.visible = true
 	elif new_state == GAME:
+		ad_is_open = false
 		$PopupTimer.start()
 		level = first_level.instance()
 		add_child(level)
 
 func _on_StartButton_pressed():
 	set_state(GAME)
+	
+func _on_PopupTimer_timeout():
+	ad_is_open = true
