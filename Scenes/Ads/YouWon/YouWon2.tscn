@@ -1,0 +1,33 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Scenes/Ads/YouWon/YouWon.tscn" type="PackedScene" id=1]
+
+[sub_resource type="Gradient" id=2]
+colors = PoolColorArray( 0.921875, 0, 1, 1, 1, 0.9375, 0, 1 )
+
+[sub_resource type="GradientTexture" id=1]
+gradient = SubResource( 2 )
+width = 600
+
+[node name="YouWon2" instance=ExtResource( 1 )]
+needed_no_hovers = 8
+
+[node name="TextureRect" parent="." index="0"]
+texture = SubResource( 1 )
+
+[node name="you_won" parent="." index="1"]
+text = "Congradulations, you won even more!"
+
+[node name="1000000" parent="." index="2"]
+margin_left = -2.0
+margin_top = 304.0
+margin_right = 723.0
+margin_bottom = 442.0
+bbcode_text = "[rainbow][wave amp=50 freq=5]$10000000000!!!![/wave]"
+text = "$10000000000!!!!"
+
+[node name="No" parent="." index="4"]
+margin_left = 372.0
+margin_top = 457.0
+margin_bottom = 527.0
+theme = null
