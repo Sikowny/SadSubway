@@ -7,15 +7,19 @@
 anchor_right = 1.0
 anchor_bottom = 1.0
 
+[node name="CeoHead" type="Sprite" parent="."]
+position = Vector2( 1128, 130 )
+texture = ExtResource( 2 )
+
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 margin_left = -618.0
-margin_top = -338.0
+margin_top = -360.0
 margin_right = 618.0
-margin_bottom = 338.0
+margin_bottom = 360.0
 theme = ExtResource( 1 )
 bbcode_enabled = true
 bbcode_text = "
@@ -25,6 +29,7 @@ Credits:
 - Brendan Ciccone - Code, Levels, Character
 - Grace Schorno - Code, Ads
 - Brendan Marney - Music, SFX
+- Zoe Parriott - Background Sprites
 
 Asset Pack Used:
  - Totus Lotus Pixel Platformer (tileset)"
@@ -35,11 +40,8 @@ Credits:
 - Brendan Ciccone - Code, Levels, Character
 - Grace Schorno - Code, Ads
 - Brendan Marney - Music, SFX
+- Zoe Parriott - Background Sprites
 
 Asset Pack Used:
  - Totus Lotus Pixel Platformer (tileset)"
 scroll_active = false
-
-[node name="CeoHead" type="Sprite" parent="RichTextLabel"]
-position = Vector2( 1106, 130 )
-texture = ExtResource( 2 )
