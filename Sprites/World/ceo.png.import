@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Terrain (16x16).png-8d3f990cf47c0cea54a1a8516df6e882.stex"
+path="res://.import/ceo.png-194259da1934765854af91971d828e59.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/World/Terrain (16x16).png"
-dest_files=[ "res://.import/Terrain (16x16).png-8d3f990cf47c0cea54a1a8516df6e882.stex" ]
+source_file="res://Sprites/World/ceo.png"
+dest_files=[ "res://.import/ceo.png-194259da1934765854af91971d828e59.stex" ]
 
 [params]
 
