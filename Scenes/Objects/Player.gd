@@ -161,10 +161,10 @@ func _on_jumpBuffer_timeout():
 
 
 func _on_deathTimer_timeout():
-	restart_level()
+	Global.game_over()
 	
 func restart_level():
-	Global.restart_level()
+	pass
 	#var restart_ = owner.filename
 	#owner.queue_free();
 	#owner.get_parent().add_child(load(restart_).instance())
