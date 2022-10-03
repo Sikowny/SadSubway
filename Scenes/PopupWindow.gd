@@ -11,6 +11,7 @@ var next_ad;
 
 # randomly selects ad in given difficulty
 func preload_next_ad():
+	randomize()
 	var a = ads[difficulty];
 	next_ad = a[posmod(randi(), a.size())]
 

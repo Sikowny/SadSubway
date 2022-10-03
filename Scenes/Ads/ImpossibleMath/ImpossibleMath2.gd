@@ -29,5 +29,5 @@ func _on_LineEdit_text_entered(new_text):
 	if given == str(answer):
 		emit_signal("ad_finished", true, null)
 	else:
-		emit_signal("ad_finished", false, "I guess you're not a genius... :(")
+		emit_signal("ad_finished", false, "Get real.")
 	print(given == str(answer))

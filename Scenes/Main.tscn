@@ -3,7 +3,7 @@
 [ext_resource path="res://Scenes/Levels/Level0.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Main/Main.gd" type="Script" id=2]
 [ext_resource path="res://Scenes/PopupWindow.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Audio/Music/Guitar Theme-001.wav" type="AudioStream" id=4]
+[ext_resource path="res://Audio/Music/Main Theme2.3.mp3" type="AudioStream" id=4]
 [ext_resource path="res://Theme/title_theme.tres" type="Theme" id=5]
 [ext_resource path="res://Theme/subtitle_theme.tres" type="Theme" id=6]
 
@@ -48,13 +48,13 @@ __meta__ = {
 }
 
 [node name="Title" type="Label" parent="UI/TitleScreen/CenterContainer"]
-margin_left = 398.0
+margin_left = 369.0
 margin_top = 161.0
-margin_right = 882.0
+margin_right = 911.0
 margin_bottom = 289.0
 theme = ExtResource( 5 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "Sadvertise :("
+text = "A  Platformer."
 __meta__ = {
 "_edit_lock_": true
 }

@@ -19,4 +19,4 @@ func _on_LineEdit_text_entered(new_text):
 	if given == str(answer):
 		emit_signal("ad_finished", true, null)
 	else:
-		emit_signal("ad_finished", false, "At least it was impossible.")
+		emit_signal("ad_finished", false, "It really was impossible.")
