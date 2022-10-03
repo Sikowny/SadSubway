@@ -33,20 +33,20 @@ func _on_PopupWindow_ad_finished(is_success):
 	if is_success:
 		$PopupTimer.start()
 	else:
-		state = GAME_OVER
+		set_state(GAME_OVER)
 
 func _on_Main_state_changed(old_state, new_state):
 	if old_state == GAME_OVER:
-		$GameOver.visible = false
+		$UI/GameOver.visible = false
 	elif old_state == TITLE_SCREEN:
-		$TitleScreen.visible = false
+		$UI/TitleScreen.visible = false
 	elif old_state == GAME:
 		pass
 		
 	if new_state == GAME_OVER:
-		$GameOver.visible = true
+		$UI/GameOver.visible = true
 	elif new_state == TITLE_SCREEN:
-		$TitleScreen.visible = true
+		$UI/TitleScreen.visible = true
 	elif new_state == GAME:
 		set_ad_is_open(false)
 		$PopupTimer.start()
@@ -57,6 +57,7 @@ func _on_StartButton_pressed():
 	set_state(GAME)
 	
 func _on_PopupTimer_timeout():
+	print("a")
 	set_ad_is_open(true)
 
 func _on_Title_pressed():

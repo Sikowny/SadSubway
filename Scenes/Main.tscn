@@ -25,7 +25,41 @@ margin_top = -360.0
 margin_right = -600.0
 margin_bottom = -320.0
 
-[node name="GameOver" type="ColorRect" parent="."]
+[node name="TitleScreen" type="ColorRect" parent="UI"]
+visible = false
+margin_right = 1280.0
+margin_bottom = 720.0
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="StartButton" type="Button" parent="UI/TitleScreen"]
+margin_left = 428.0
+margin_top = 409.0
+margin_right = 858.0
+margin_bottom = 550.0
+text = "Start"
+
+[node name="CenterContainer" type="CenterContainer" parent="UI/TitleScreen"]
+margin_right = 1280.0
+margin_bottom = 450.0
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Title" type="Label" parent="UI/TitleScreen/CenterContainer"]
+margin_left = 398.0
+margin_top = 161.0
+margin_right = 882.0
+margin_bottom = 289.0
+theme = ExtResource( 5 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Sadvertise :("
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="GameOver" type="ColorRect" parent="UI"]
 visible = false
 margin_right = 1281.0
 margin_bottom = 718.0
@@ -34,21 +68,21 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="Title" type="Button" parent="GameOver"]
+[node name="Title" type="Button" parent="UI/GameOver"]
 margin_left = 903.0
 margin_top = 545.0
 margin_right = 1062.0
 margin_bottom = 630.0
 text = "Title Screen"
 
-[node name="Continue" type="Button" parent="GameOver"]
+[node name="Continue" type="Button" parent="UI/GameOver"]
 margin_left = 274.0
 margin_top = 476.0
 margin_right = 419.0
 margin_bottom = 563.0
 text = "Continue"
 
-[node name="CenterContainer2" type="CenterContainer" parent="GameOver"]
+[node name="CenterContainer2" type="CenterContainer" parent="UI/GameOver"]
 margin_left = 436.0
 margin_top = 161.0
 margin_right = 844.0
@@ -57,7 +91,7 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="GameOverText" type="Label" parent="GameOver/CenterContainer2"]
+[node name="GameOverText" type="Label" parent="UI/GameOver/CenterContainer2"]
 margin_right = 408.0
 margin_bottom = 128.0
 theme = ExtResource( 5 )
@@ -66,7 +100,7 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="CenterContainer" type="CenterContainer" parent="GameOver"]
+[node name="CenterContainer" type="CenterContainer" parent="UI/GameOver"]
 margin_right = 1280.0
 margin_bottom = 720.0
 theme = SubResource( 1 )
@@ -74,47 +108,13 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="Tagline" type="Label" parent="GameOver/CenterContainer"]
+[node name="Tagline" type="Label" parent="UI/GameOver/CenterContainer"]
 margin_left = 538.0
 margin_top = 328.0
 margin_right = 742.0
 margin_bottom = 392.0
 theme = ExtResource( 6 )
 text = "Game Over."
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="TitleScreen" type="ColorRect" parent="."]
-visible = false
-margin_right = 1280.0
-margin_bottom = 720.0
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="StartButton" type="Button" parent="TitleScreen"]
-margin_left = 428.0
-margin_top = 409.0
-margin_right = 858.0
-margin_bottom = 550.0
-text = "Start"
-
-[node name="CenterContainer" type="CenterContainer" parent="TitleScreen"]
-margin_right = 1280.0
-margin_bottom = 450.0
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="Title" type="Label" parent="TitleScreen/CenterContainer"]
-margin_left = 398.0
-margin_top = 161.0
-margin_right = 882.0
-margin_bottom = 289.0
-theme = ExtResource( 5 )
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "Sadvertise :("
 __meta__ = {
 "_edit_lock_": true
 }
@@ -128,6 +128,6 @@ autoplay = true
 [connection signal="timeout" from="PopupTimer" to="." method="_on_PopupTimer_timeout"]
 [connection signal="timeout" from="PopupTimer" to="UI/PopupWindow" method="open_new_ad"]
 [connection signal="ad_finished" from="UI/PopupWindow" to="." method="_on_PopupWindow_ad_finished"]
-[connection signal="pressed" from="GameOver/Title" to="." method="_on_Title_pressed"]
-[connection signal="pressed" from="GameOver/Continue" to="." method="_on_Continue_pressed"]
-[connection signal="pressed" from="TitleScreen/StartButton" to="." method="_on_StartButton_pressed"]
+[connection signal="pressed" from="UI/TitleScreen/StartButton" to="." method="_on_StartButton_pressed"]
+[connection signal="pressed" from="UI/GameOver/Title" to="." method="_on_Title_pressed"]
+[connection signal="pressed" from="UI/GameOver/Continue" to="." method="_on_Continue_pressed"]
