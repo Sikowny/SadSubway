@@ -42,7 +42,7 @@ func _on_Main_state_changed(old_state, new_state):
 		ad_is_open = false
 		$PopupTimer.start()
 		level = first_level.instance()
-		add_child(level)
+		get_tree().get_root().add_child(level)
 
 func _on_StartButton_pressed():
 	set_state(GAME)

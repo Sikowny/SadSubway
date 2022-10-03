@@ -12,4 +12,3 @@ func _on_LevelChange_body_entered(body):
 		var t = target.instance()
 		var root = get_tree().get_root()
 		root.add_child(t)
-		root.move_child(t, 0)

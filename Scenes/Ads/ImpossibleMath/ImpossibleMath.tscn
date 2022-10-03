@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://Scenes/Ads/Ad.gd" type="Script" id=1]
+[ext_resource path="res://Scenes/Ads/ImpossibleMath/ImpossibleMath.gd" type="Script" id=1]
 [ext_resource path="res://Theme/math_theme.tres" type="Theme" id=2]
 [ext_resource path="res://Theme/math_text_theme.tres" type="Theme" id=3]
 [ext_resource path="res://Sprites/chalkboard.png" type="Texture" id=4]
@@ -29,7 +29,7 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="CenterContainer" type="CenterContainer" parent="."]
+[node name="Center" type="CenterContainer" parent="."]
 margin_left = 20.0
 margin_top = 270.0
 margin_right = 580.0
@@ -38,7 +38,7 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="Label" type="Label" parent="CenterContainer"]
+[node name="Question" type="Label" parent="Center"]
 margin_left = 212.0
 margin_right = 347.0
 margin_bottom = 76.0
@@ -48,13 +48,13 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="CenterContainer2" type="CenterContainer" parent="."]
+[node name="Center2" type="CenterContainer" parent="."]
 margin_left = 30.0
 margin_top = 421.0
 margin_right = 569.0
 margin_bottom = 507.0
 
-[node name="LineEdit" type="LineEdit" parent="CenterContainer2"]
+[node name="LineEdit" type="LineEdit" parent="Center2"]
 margin_left = 156.0
 margin_right = 382.0
 margin_bottom = 86.0
@@ -62,3 +62,6 @@ theme = ExtResource( 3 )
 __meta__ = {
 "_edit_lock_": true
 }
+
+[connection signal="gui_input" from="Center/Question" to="." method="_on_Question_gui_input"]
+[connection signal="text_entered" from="Center2/LineEdit" to="." method="_on_LineEdit_text_entered"]
