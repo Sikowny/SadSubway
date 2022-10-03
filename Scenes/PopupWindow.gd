@@ -7,13 +7,22 @@ export var difficulty = 0;
 
 export(Array, Array, PackedScene) var ads;
 
+var last_choice = 1;
+
 var next_ad;
 
 # randomly selects ad in given difficulty
 func preload_next_ad():
 	randomize()
 	var a = ads[difficulty];
-	next_ad = a[posmod(randi(), a.size())]
+	var index = posmod(randi(), a.size())
+	while index == last_choice:
+		if a.size() == 1:
+			break
+		index = posmod(randi(), a.size())
+		
+	next_ad = a[index]
+	last_choice = index
 
 func open_new_ad():
 	popup_centered()
