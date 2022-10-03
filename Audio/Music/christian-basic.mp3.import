@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/christian-basic.mp3-9476d08ec186305307f57a8c032bccd3.mp3str"
+
+[deps]
+
+source_file="res://Audio/Music/christian-basic.mp3"
+dest_files=[ "res://.import/christian-basic.mp3-9476d08ec186305307f57a8c032bccd3.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

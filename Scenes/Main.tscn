@@ -41,7 +41,7 @@ margin_right = 881.0
 margin_bottom = 550.0
 text = "Start"
 
-[node name="MusicPlayer" type="AudioStreamPlayer" parent="."]
+[node name="Music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 4 )
 volume_db = -4.0
 autoplay = true
