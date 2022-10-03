@@ -83,5 +83,5 @@ rect_min_size = Vector2( 0, 25 )
 stream = ExtResource( 1 )
 autoplay = true
 
-[connection signal="pressed" from="Control/VBox/HBox/Yes" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Control/VBox/HBox/Yes" to="." method="_on_Yes_pressed"]
 [connection signal="pressed" from="Control/VBox/HBox/No" to="." method="_on_button_pressed"]

@@ -26,4 +26,8 @@ func _ready():
 
 func _on_LineEdit_text_entered(new_text):
 	var given = new_text.strip_edges(true, true)
-	emit_signal("ad_finished", given == str(answer))
+	if given == str(answer):
+		emit_signal("ad_finished", true, null)
+	else:
+		emit_signal("ad_finished", false, "I guess you're not a genius... :(")
+	print(given == str(answer))

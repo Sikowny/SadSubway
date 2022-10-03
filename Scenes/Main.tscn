@@ -26,7 +26,6 @@ margin_right = -600.0
 margin_bottom = -320.0
 
 [node name="TitleScreen" type="ColorRect" parent="UI"]
-visible = false
 margin_right = 1280.0
 margin_bottom = 720.0
 __meta__ = {
@@ -34,10 +33,11 @@ __meta__ = {
 }
 
 [node name="StartButton" type="Button" parent="UI/TitleScreen"]
-margin_left = 428.0
-margin_top = 409.0
-margin_right = 858.0
+margin_left = 555.0
+margin_top = 480.0
+margin_right = 728.0
 margin_bottom = 550.0
+theme = ExtResource( 6 )
 text = "Start"
 
 [node name="CenterContainer" type="CenterContainer" parent="UI/TitleScreen"]
@@ -62,7 +62,7 @@ __meta__ = {
 [node name="GameOver" type="ColorRect" parent="UI"]
 visible = false
 margin_right = 1281.0
-margin_bottom = 718.0
+margin_bottom = 729.0
 color = Color( 0, 0, 0, 1 )
 __meta__ = {
 "_edit_lock_": true
@@ -77,12 +77,11 @@ __meta__ = {
 }
 
 [node name="Tagline" type="Label" parent="UI/GameOver/CenterContainer"]
-margin_left = 538.0
+margin_left = 640.0
 margin_top = 328.0
-margin_right = 742.0
+margin_right = 640.0
 margin_bottom = 392.0
 theme = ExtResource( 6 )
-text = "Game Over."
 __meta__ = {
 "_edit_lock_": true
 }
@@ -106,10 +105,11 @@ __meta__ = {
 }
 
 [node name="Title" type="Button" parent="UI/GameOver"]
-margin_left = 903.0
-margin_top = 545.0
-margin_right = 1062.0
-margin_bottom = 630.0
+margin_left = 878.0
+margin_top = 544.0
+margin_right = 1117.0
+margin_bottom = 629.0
+theme = ExtResource( 6 )
 text = "Title Screen"
 
 [node name="Continue" type="Button" parent="UI/GameOver"]
@@ -117,6 +117,7 @@ margin_left = 274.0
 margin_top = 476.0
 margin_right = 419.0
 margin_bottom = 563.0
+theme = ExtResource( 6 )
 text = "Continue"
 
 [node name="Music" type="AudioStreamPlayer" parent="."]

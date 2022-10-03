@@ -24,7 +24,7 @@ var slot_3_queued_stop = false;
 func try_end_ad():
 	if slot_1_value != NONE and slot_2_value != NONE and slot_3_value != NONE \
 	and !slot_1_queued_stop and !slot_2_queued_stop and !slot_3_queued_stop:
-		emit_signal("ad_finished", true)
+		emit_signal("ad_finished", true, null)
 
 func _ready():
 	pass # Replace with function body.

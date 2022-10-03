@@ -3,11 +3,10 @@ extends Ad
 export(int) var needed_no_hovers = 6
 
 func _on_Yes_pressed():
-	emit_signal("ad_finished", false)
+	emit_signal("ad_finished", false, "At least you're rich now, right?")
 
 func _on_No_pressed():
-	emit_signal("ad_finished", true)
-
+	emit_signal("ad_finished", true, null)
 
 func _on_No_mouse_entered():
 	if needed_no_hovers > 0:

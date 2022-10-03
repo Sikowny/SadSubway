@@ -28,16 +28,21 @@ func set_ad_is_open(new_bool):
 func _ready():
 	set_state(TITLE_SCREEN)
 
-func _on_PopupWindow_ad_finished(is_success):
+func _on_PopupWindow_ad_finished(is_success, message):
 	set_ad_is_open(false)
 	if is_success:
 		$PopupTimer.start()
 	else:
 		set_state(GAME_OVER)
+		if message == null:
+			$UI/GameOver/CenterContainer/Tagline.text = ""
+		else:
+			$UI/GameOver/CenterContainer/Tagline.text = message
 
 func _on_Main_state_changed(old_state, new_state):
 	if old_state == GAME_OVER:
 		$UI/GameOver.visible = false
+		$UI/GameOver/CenterContainer/Tagline.text = ""
 	elif old_state == TITLE_SCREEN:
 		$UI/TitleScreen.visible = false
 	elif old_state == GAME:
