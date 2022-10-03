@@ -6,9 +6,6 @@
 [node name="Credits" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
 anchor_left = 0.5
@@ -24,27 +21,24 @@ bbcode_enabled = true
 bbcode_text = "
                                                        Thanks for playing!
 
-
-
-
 Credits:
-- Brendan Ciccone
-- Grace Schorno
-- Other Brendan (fixme: find out other Brendan's last name) "
+- Brendan Ciccone - Code, Levels, Character
+- Grace Schorno - Code, Ads
+- Brendan Marney - Music, SFX
+
+Asset Pack Used:
+ - Totus Lotus Pixel Platformer (tileset)"
 text = "
                                                        Thanks for playing!
 
 Credits:
 - Brendan Ciccone - Code, Levels, Character
-- Brendan Marney - Music, Sfx
 - Grace Schorno - Code, Ads
+- Brendan Marney - Music, SFX
 
-Asset Packs
-- Totus Lotis (Tile set)"
+Asset Pack Used:
+ - Totus Lotus Pixel Platformer (tileset)"
 scroll_active = false
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="CeoHead" type="Sprite" parent="RichTextLabel"]
 position = Vector2( 1106, 130 )
