@@ -1,5 +1,6 @@
 extends Node
 
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
@@ -28,3 +29,9 @@ func set_difficulty(value):
 	var main = get_node("/root/Main/UI/PopupWindow")
 	if main != null:
 		main.difficulty = value
+
+func set_music(value):
+	var main = get_node("/root/Main")
+	if main != null:
+		main.set_music(value)
+		

@@ -4,6 +4,8 @@ extends Node
 enum {TITLE_SCREEN, GAME_OVER, GAME}
 
 signal state_changed(old_state, new_state);
+const music = preload("res://Audio/Music/Main Theme 1.2.mp3")
+const music2 = preload("res://Audio/Music/Main Theme2.3.mp3")
 
 export(PackedScene) var first_level;
 var level;
@@ -32,6 +34,7 @@ func _on_PopupWindow_ad_finished(is_success, message):
 	set_ad_is_open(false)
 	if is_success:
 		$PopupTimer.start()
+		$adClose.play()
 	else:
 		set_state(GAME_OVER)
 		if message == null:
@@ -69,9 +72,20 @@ func _on_StartButton_pressed():
 func _on_PopupTimer_timeout():
 	print("a")
 	set_ad_is_open(true)
+	$adOpen.play()
 
 func _on_Title_pressed():
 	set_state(TITLE_SCREEN)
 
 func _on_Continue_pressed():
 	set_state(GAME)
+	
+func set_music(value):
+	match value:
+		0: pass
+		1: 
+			$Music.stream = music; 
+			$Music.playing = true
+		2: 
+			$Music.stream = music2; 
+			$Music.playing = true

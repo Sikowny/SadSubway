@@ -39,6 +39,7 @@ curve = SubResource( 2 )
 [node name="LevelChange" parent="." instance=ExtResource( 4 )]
 position = Vector2( 6208, 448 )
 target = ExtResource( 5 )
+difficultyChange = 1
 
 [node name="deathTrigger" parent="." instance=ExtResource( 7 )]
 position = Vector2( -480, 736 )

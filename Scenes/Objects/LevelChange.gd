@@ -1,6 +1,8 @@
 extends Area2D
 
 export(PackedScene) var target
+export var musicChange = 0
+export var difficultyChange = 0;
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -12,3 +14,5 @@ func _on_LevelChange_body_entered(body):
 		var t = target.instance()
 		var root = get_tree().get_root()
 		root.add_child(t)
+		Global.set_difficulty(difficultyChange)
+		Global.set_music(musicChange)

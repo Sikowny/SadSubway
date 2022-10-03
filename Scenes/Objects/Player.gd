@@ -82,6 +82,7 @@ func _physics_process(delta):
 			velocity.y = jumpStr;
 			jumps_left -= 1
 			snap *= 0;
+			$jump.play()
 	
 	velocity.x = clamp(velocity.x , -MAX_VEL_X, MAX_VEL_X)
 	velocity.y = clamp(velocity.y, -MAX_VEL_Y, MAX_VEL_Y)
@@ -142,8 +143,10 @@ func is_player():
 	
 func playerDeath():
 	isDead = 1;
+	visible = false
 	hasControl = 0;
 	deathTimer.start()
+	$die.play()
 	
 func checkAds():
 	if(Global.ad_is_open()):

@@ -13,6 +13,7 @@ func _ready():
 func collect():
 	visible = false
 	collected = true
+	$sfx.playing = true
 	
 	#if Global.max_coins != 1:
 		#audio.pitch_scale = (float(Global.current_coins) / (Global.max_coins - 1)) + 1

@@ -1,9 +1,12 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://Sprites/Player/playerTemp.png" type="Texture" id=1]
 [ext_resource path="res://Scenes/Objects/Player.gd" type="Script" id=2]
 [ext_resource path="res://Sprites/Player/runTemp.png" type="Texture" id=3]
 [ext_resource path="res://Sprites/Player/airTemp.png" type="Texture" id=4]
+[ext_resource path="res://Audio/SFX/land 5 personal fav.wav" type="AudioStream" id=5]
+[ext_resource path="res://Audio/SFX/playerDie.wav" type="AudioStream" id=6]
+[ext_resource path="res://Audio/SFX/Jump4.wav" type="AudioStream" id=7]
 
 [sub_resource type="AtlasTexture" id=6]
 flags = 4
@@ -101,6 +104,15 @@ one_shot = true
 [node name="jumpBuffer" type="Timer" parent="."]
 wait_time = 0.1
 one_shot = true
+
+[node name="land" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 5 )
+
+[node name="jump" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 7 )
+
+[node name="die" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 6 )
 
 [connection signal="timeout" from="deathTimer" to="." method="_on_deathTimer_timeout"]
 [connection signal="timeout" from="jumpBuffer" to="." method="_on_jumpBuffer_timeout"]

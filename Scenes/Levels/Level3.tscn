@@ -56,12 +56,11 @@ curve = SubResource( 4 )
 position = Vector2( 3728, -152 )
 curve = SubResource( 2 )
 
-[node name="Player" parent="." instance=ExtResource( 1 )]
-position = Vector2( 304, 104 )
-
 [node name="LevelChange" parent="." instance=ExtResource( 4 )]
 position = Vector2( 6208, 448 )
 target = ExtResource( 12 )
+musicChange = 2
+difficultyChange = 2
 
 [node name="deathTrigger" parent="." instance=ExtResource( 7 )]
 position = Vector2( -480, 736 )
@@ -218,3 +217,6 @@ rotation = 1.5708
 
 [node name="Slope45" parent="Slope45" instance=ExtResource( 8 )]
 position = Vector2( 64, -64 )
+
+[node name="Player" parent="." instance=ExtResource( 1 )]
+position = Vector2( 304, 104 )

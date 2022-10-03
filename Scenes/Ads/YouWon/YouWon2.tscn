@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Scenes/Ads/YouWon/YouWon.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Audio/Music/Meditative-style Ad.mp3" type="AudioStream" id=2]
 
 [sub_resource type="Gradient" id=2]
 colors = PoolColorArray( 0.921875, 0, 1, 1, 1, 0.9375, 0, 1 )
@@ -31,3 +32,7 @@ margin_left = 372.0
 margin_top = 457.0
 margin_bottom = 527.0
 theme = null
+
+[node name="Music" type="AudioStreamPlayer" parent="." index="5"]
+stream = ExtResource( 2 )
+autoplay = true

@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://Theme/subtitle_theme.tres" type="Theme" id=1]
+[ext_resource path="res://Sprites/World/ceoHead.png" type="Texture" id=2]
 
 [node name="Credits" type="Control"]
 anchor_right = 1.0
@@ -33,14 +34,18 @@ Credits:
 text = "
                                                        Thanks for playing!
 
-
-
-
 Credits:
-- Brendan Ciccone
-- Grace Schorno
-- Other Brendan (fixme: find out other Brendan's last name) "
+- Brendan Ciccone - Code, Levels, Character
+- Brendan Marney - Music, Sfx
+- Grace Schorno - Code, Ads
+
+Asset Packs
+- Totus Lotis (Tile set)"
 scroll_active = false
 __meta__ = {
 "_edit_lock_": true
 }
+
+[node name="CeoHead" type="Sprite" parent="RichTextLabel"]
+position = Vector2( 1106, 130 )
+texture = ExtResource( 2 )
