@@ -70,7 +70,7 @@ extents = Vector2( 10, 35.5 )
 script = ExtResource( 2 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2( 0, -100 )
+position = Vector2( 0, -50 )
 current = true
 limit_left = -100
 limit_bottom = 720
@@ -91,7 +91,7 @@ polygon = PoolVector2Array( 0, -1, -7, -38, 0, -67, 7, -38 )
 disabled = true
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="."]
-position = Vector2( 0, -100 )
+position = Vector2( 0, -50 )
 remote_path = NodePath("../Camera2D")
 
 [node name="deathTimer" type="Timer" parent="."]

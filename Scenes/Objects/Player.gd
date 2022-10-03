@@ -161,4 +161,6 @@ func _on_jumpBuffer_timeout():
 
 
 func _on_deathTimer_timeout():
-	get_tree().reload_current_scene()
+	var restart_ = owner.filename
+	owner.queue_free();
+	owner.get_parent().add_child(load(restart_).instance())

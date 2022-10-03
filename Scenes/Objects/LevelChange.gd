@@ -4,7 +4,7 @@ export(PackedScene) var target
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	visible = false
+	visible = true
 
 func _on_LevelChange_body_entered(body):
 	if body is Player:
