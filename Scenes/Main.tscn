@@ -68,19 +68,24 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="Title" type="Button" parent="UI/GameOver"]
-margin_left = 903.0
-margin_top = 545.0
-margin_right = 1062.0
-margin_bottom = 630.0
-text = "Title Screen"
+[node name="CenterContainer" type="CenterContainer" parent="UI/GameOver"]
+margin_right = 1280.0
+margin_bottom = 720.0
+theme = SubResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
 
-[node name="Continue" type="Button" parent="UI/GameOver"]
-margin_left = 274.0
-margin_top = 476.0
-margin_right = 419.0
-margin_bottom = 563.0
-text = "Continue"
+[node name="Tagline" type="Label" parent="UI/GameOver/CenterContainer"]
+margin_left = 538.0
+margin_top = 328.0
+margin_right = 742.0
+margin_bottom = 392.0
+theme = ExtResource( 6 )
+text = "Game Over."
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="CenterContainer2" type="CenterContainer" parent="UI/GameOver"]
 margin_left = 436.0
@@ -100,24 +105,19 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="CenterContainer" type="CenterContainer" parent="UI/GameOver"]
-margin_right = 1280.0
-margin_bottom = 720.0
-theme = SubResource( 1 )
-__meta__ = {
-"_edit_lock_": true
-}
+[node name="Title" type="Button" parent="UI/GameOver"]
+margin_left = 903.0
+margin_top = 545.0
+margin_right = 1062.0
+margin_bottom = 630.0
+text = "Title Screen"
 
-[node name="Tagline" type="Label" parent="UI/GameOver/CenterContainer"]
-margin_left = 538.0
-margin_top = 328.0
-margin_right = 742.0
-margin_bottom = 392.0
-theme = ExtResource( 6 )
-text = "Game Over."
-__meta__ = {
-"_edit_lock_": true
-}
+[node name="Continue" type="Button" parent="UI/GameOver"]
+margin_left = 274.0
+margin_top = 476.0
+margin_right = 419.0
+margin_bottom = 563.0
+text = "Continue"
 
 [node name="Music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 4 )

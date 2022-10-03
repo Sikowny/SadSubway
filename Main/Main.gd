@@ -50,8 +50,11 @@ func _on_Main_state_changed(old_state, new_state):
 	elif new_state == GAME:
 		set_ad_is_open(false)
 		$PopupTimer.start()
-		level = first_level.instance()
-		get_tree().get_root().add_child(level)
+		if old_state == TITLE_SCREEN:
+			level = first_level.instance()
+			get_tree().get_root().add_child(level)
+		elif old_state == GAME_OVER:
+			Global.restart_level()
 
 func _on_StartButton_pressed():
 	set_state(GAME)
@@ -64,4 +67,4 @@ func _on_Title_pressed():
 	set_state(TITLE_SCREEN)
 
 func _on_Continue_pressed():
-	Global.restart_level()
+	set_state(GAME)
