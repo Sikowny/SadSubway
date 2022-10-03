@@ -93,3 +93,14 @@ disabled = true
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="."]
 position = Vector2( 0, -100 )
 remote_path = NodePath("../Camera2D")
+
+[node name="deathTimer" type="Timer" parent="."]
+wait_time = 1.5
+one_shot = true
+
+[node name="jumpBuffer" type="Timer" parent="."]
+wait_time = 0.1
+one_shot = true
+
+[connection signal="timeout" from="deathTimer" to="." method="_on_deathTimer_timeout"]
+[connection signal="timeout" from="jumpBuffer" to="." method="_on_jumpBuffer_timeout"]

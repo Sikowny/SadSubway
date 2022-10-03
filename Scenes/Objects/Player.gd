@@ -20,6 +20,12 @@ var facing = 1
 var jumps_left = jump_count
 var velocity = Vector2.ZERO
 var Move = Vector2.ZERO
+var isDead = false;
+
+onready var jumpBuffer = $jumpBuffer
+onready var deathTimer = $deathTimer
+
+var jumpSignal = false;
 
 enum STATE {
 	IDLE,
@@ -59,13 +65,13 @@ func _physics_process(delta):
 				velocity.x -= friction_curr*sign(velocity.x)
 			
 			
-	
-	if is_on_floor():
-		if(Move.x == 0): playerState = STATE.IDLE
-		jumps_left = jump_count;
-	else: #AIR BOURNE
-		playerState = STATE.AIR_NEUTRAL
-		velocity.y += gravity;
+	if(hasPhysics):
+		if is_on_floor():
+			if(Move.x == 0): playerState = STATE.IDLE
+			jumps_left = jump_count;
+		else: #AIR BOURNE
+			playerState = STATE.AIR_NEUTRAL
+			velocity.y += gravity;
 		
 		
 	
@@ -98,11 +104,15 @@ func do_playerInput():
 		var MoveY = Input.get_action_strength("ui_down") - Input.get_action_strength("ui_up")
 		var MoveY1 = int(Input.is_key_pressed(KEY_S)) - int(Input.is_key_pressed(KEY_W))
 		
-		isJumping = Input.is_key_pressed(KEY_W) || Input.is_key_pressed(KEY_SPACE)
+		jumpSignal = Input.is_key_pressed(KEY_W) || Input.is_key_pressed(KEY_SPACE)
 		Move = Vector2(MoveX1,MoveY1).normalized()
+		
+		if(jumpSignal):
+			isJumping = true
+			jumpBuffer.start()
 	else:
 		Move = Vector2.ZERO
-		isJumping = 0
+		jumpSignal = false
 	
 func do_playerAnimation():
 	if(facing == -1):
@@ -131,14 +141,24 @@ func is_player():
 	
 	
 func playerDeath():
+	isDead = 1;
 	hasControl = 0;
+	deathTimer.start()
 	
 func checkAds():
 	if(Global.ad_is_open()):
 		hasControl = 0;
 		hasPhysics = 0;
-	else:
+	elif !isDead:
 		hasControl = 1;
 		hasPhysics = 1;
 
 
+
+
+func _on_jumpBuffer_timeout():
+	isJumping = false;
+
+
+func _on_deathTimer_timeout():
+	get_tree().reload_current_scene()
