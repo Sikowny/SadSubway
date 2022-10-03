@@ -12,7 +12,7 @@ var next_ad;
 # randomly selects ad in given difficulty
 func preload_next_ad():
 	var a = ads[difficulty];
-	next_ad = a[randi() % a.size()]
+	next_ad = a[posmod(randi(), a.size())]
 
 func open_new_ad():
 	popup_centered()

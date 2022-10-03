@@ -1,9 +1,10 @@
 [gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://Sprites/World/coin.png" type="Texture" id=1]
+[ext_resource path="res://Sprites/World/Coin.png" type="Texture" id=1]
 [ext_resource path="res://Scenes/Objects/Coin.gd" type="Script" id=2]
 
 [sub_resource type="SpriteFrames" id=3]
+resource_local_to_scene = true
 animations = [ {
 "frames": [ ExtResource( 1 ) ],
 "loop": true,
