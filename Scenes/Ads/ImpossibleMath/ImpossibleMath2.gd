@@ -14,7 +14,7 @@ func _ready():
 	num_3 = posmod(randi(), 10)
 	num_5 = posmod(randi(), 9) + 1
 	num_4 = num_5 * ((posmod(randi(), 4)) + 1)
-	num_6 = posmod(randi(), 60)
+	num_6 = posmod(randi(), 10)
 	answer = num_1 + (num_2 * num_3) + (num_4 / num_5) - num_6
 	$Center/Question.text =  \
 		str(num_1) + " + " + \

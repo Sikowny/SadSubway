@@ -7,10 +7,10 @@ var num_4;
 var answer;
 
 func _ready():
-	num_1 = posmod(randi(), 20)
-	num_2 = posmod(randi(), 20)
-	num_3 = posmod(randi(), 20)
-	num_4 = posmod(randi(), 20)
+	num_1 = posmod(randi(), 10)
+	num_2 = posmod(randi(), 10)
+	num_3 = posmod(randi(), 10)
+	num_4 = posmod(randi(), 10)
 	answer = num_1 + (num_2 * num_3) + num_4
 	$Center/Question.text = str(num_1) + " + " + str(num_2) + " * " + str(num_3) + " + " + str(num_4)
 

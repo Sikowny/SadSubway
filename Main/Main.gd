@@ -47,6 +47,8 @@ func _on_Main_state_changed(old_state, new_state):
 		$UI/GameOver.visible = true
 	elif new_state == TITLE_SCREEN:
 		$UI/TitleScreen.visible = true
+		if old_state == GAME_OVER:
+			get_node("/root").get_child(2).queue_free()
 	elif new_state == GAME:
 		set_ad_is_open(false)
 		$PopupTimer.start()
