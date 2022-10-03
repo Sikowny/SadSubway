@@ -10,3 +10,12 @@ func ad_is_open():
 		return false
 	else:
 		return main.ad_is_open
+
+func game_over():
+	var main = get_node("/root/Main")
+	if main != null:
+		main.state = 1
+
+# You gotta do this part, Brandan
+func restart_level():
+	pass

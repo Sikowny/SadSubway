@@ -1,5 +1,6 @@
 extends Node
 
+# DO NOT CHANGE
 enum {TITLE_SCREEN, GAME_OVER, GAME}
 
 signal state_changed(old_state, new_state);
@@ -57,3 +58,9 @@ func _on_StartButton_pressed():
 	
 func _on_PopupTimer_timeout():
 	set_ad_is_open(true)
+
+func _on_Title_pressed():
+	set_state(TITLE_SCREEN)
+
+func _on_Continue_pressed():
+	Global.restart_level()
