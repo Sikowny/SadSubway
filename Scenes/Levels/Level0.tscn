@@ -10,7 +10,7 @@
 [ext_resource path="res://Sprites/World/rock.png" type="Texture" id=8]
 [ext_resource path="res://Scenes/Objects/deathTrigger.tscn" type="PackedScene" id=9]
 
-[node name="Brendan\'s Test" type="Node2D"]
+[node name="Level" type="Node2D"]
 position = Vector2( 0, -192 )
 
 [node name="World" type="Node2D" parent="."]

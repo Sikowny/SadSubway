@@ -21,7 +21,7 @@ _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, 80, -8, 0, 0, 0, 0, 80, 128, 0, 0, 0, 0, -144, 128, 0, 0, 0, 0, -144, -8, 0, 0, 0, 0, 80, -8 )
 }
 
-[node name="Level2" type="Node2D"]
+[node name="Level" type="Node2D"]
 
 [node name="World" type="Node2D" parent="."]
 

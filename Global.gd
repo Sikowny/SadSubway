@@ -18,4 +18,8 @@ func game_over():
 
 # You gotta do this part, Brandan
 func restart_level():
-	pass
+	var level = get_parent().get_child(2)
+	if(level != null):
+		var restart_ = level.filename
+		level.queue_free();
+		level.get_parent().add_child(load(restart_).instance())
