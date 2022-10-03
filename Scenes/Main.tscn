@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Scenes/Levels/Level0.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Main/Main.gd" type="Script" id=2]
@@ -9,6 +9,8 @@
 [ext_resource path="res://Audio/SFX/Ad Pop Up 3.wav" type="AudioStream" id=7]
 [ext_resource path="res://Audio/SFX/Add close 1.wav" type="AudioStream" id=8]
 [ext_resource path="res://Sprites/World/ceo.png" type="Texture" id=9]
+[ext_resource path="res://Sprites/lable.png" type="Texture" id=10]
+[ext_resource path="res://Sprites/lable2.png" type="Texture" id=11]
 
 [sub_resource type="Theme" id=1]
 
@@ -67,6 +69,16 @@ __meta__ = {
 position = Vector2( 1184, 592 )
 scale = Vector2( 0.595522, 0.595522 )
 texture = ExtResource( 9 )
+
+[node name="Lable" type="Sprite" parent="UI/TitleScreen/CenterContainer/Ceo"]
+position = Vector2( -1528.81, -190.689 )
+scale = Vector2( 1.33288, 1.44035 )
+texture = ExtResource( 10 )
+
+[node name="Lable2" type="Sprite" parent="UI/TitleScreen/CenterContainer/Ceo"]
+position = Vector2( -255.238, -295.539 )
+scale = Vector2( 1.6792, 1.6792 )
+texture = ExtResource( 11 )
 
 [node name="GameOver" type="ColorRect" parent="UI"]
 visible = false
