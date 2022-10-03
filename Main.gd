@@ -20,9 +20,9 @@ func set_ad_is_open(new_bool):
 	if ad_is_open != new_bool:
 		ad_is_open = new_bool
 		if ad_is_open:
-			$Music.playing = true
-		else:
 			$Music.playing = false
+		else:
+			$Music.playing = true
 
 func _ready():
 	set_state(TITLE_SCREEN)
